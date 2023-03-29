@@ -10,17 +10,5 @@ export default defineConfig({
   experimental: {
     assets: true
   },
-  integrations: [markdoc({
-    tags: {
-      gallery: {
-        render: 'Gallery',
-        attributes: {
-          // Component props as attribute definitions
-          // See Markdoc's documentation on defining attributes
-          // https://markdoc.dev/docs/attributes#defining-attributes
-          folder: { type: String },
-        }
-      },
-    },
-  }), alpine(), UnoCSS()]
+  integrations: [markdoc(), alpine(), UnoCSS()]
 })
