@@ -14,6 +14,8 @@ This template is written in HTML5, CSS, [UnoCSS](https://uno.antfu.me/)
 
 It is open source (MIT licence), and trips created using this template should be deployed using Github Pages as a subsite underneath the travelens master site eg. `travelens.github.io/trip`.
 
+The site supports search via Fuse.js, sitemap, rss, SEO tags. The sitemap, rss and fuse search indexes are meant to be copied into the parent site (travelens) rather than used directly.
+
 The site design is based on [Digizu's TailwindCSS templates](https://templates.digizu.co.uk/), particularly Impulse.
 
 ## 🚀 Project Structure
