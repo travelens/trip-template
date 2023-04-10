@@ -5,7 +5,7 @@ description: Devil’s Corner is a cellar door named after a rugged bend in a ri
 trip: Tasmania 2018
 place: Australia
 location: Devil's Corner
-image: ~/assets/gallery/day-1-devils-corner/Chris, Devil's Corner.jpeg
+image: ../../assets/gallery/day-1-devils-corner/Chris, Devil's Corner.jpeg
 gallery: day-1-devils-corner
 tags:
   - lookout

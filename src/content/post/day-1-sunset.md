@@ -5,7 +5,7 @@ description: Freycinet Lodge is an accommodation located inside the Freycinet Na
 trip: Tasmania 2018
 place: Australia
 location: Freycinet
-image: ~/assets/gallery/day-1-sunset/title - Chris, sunset.jpeg
+image: ../../assets/gallery/day-1-sunset/title - Chris, sunset.jpeg
 gallery: day-1-sunset
 tags:
   - Freycinet Lodge

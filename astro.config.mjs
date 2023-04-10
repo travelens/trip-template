@@ -10,5 +10,7 @@ export default defineConfig({
   experimental: {
     assets: true
   },
-  integrations: [markdoc(), alpine(), UnoCSS()]
+  integrations: [markdoc(), alpine(), UnoCSS({
+    injectReset: true // or a path to the reset file
+  })]
 })
