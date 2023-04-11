@@ -12,14 +12,21 @@ export interface Props {
 const { id, images } = Astro.props
 
 const imageFiles = import.meta.glob<ImageMetadata>('../assets/**/*.{png,webp,jpg,jpeg}', { import: 'default', eager: true })
-const imageSrcs = images.map(image => imageFiles[image])
-const imagetitles = images.map(image => image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1))
 const exifs = [] as Record<string, any>[]
 for (let i in images) {
   const exif = await exifr.parse(images[i].replace('../', './src/'))
   exifs.push(exif)
 }
-
+const imageObjects = images.map((image, i) => {
+  return {
+    file: image,
+    title: image.slice(0, image.lastIndexOf('.')).slice(image.lastIndexOf('/') + 1),
+    image: imageFiles[image],
+    exif: exifs[i]
+  }
+}).sort((a, b) => {
+    return a.exif.CreateDate - b.exif.CreateDate;
+})
 ---
 <style>
   .pswp--custom-icon-colors {
@@ -44,17 +51,22 @@ for (let i in images) {
   }
 </style>
 <lightbox-inner data-id={id}>
-  {imageSrcs.map((image, i) => (
+  {imageObjects.map(image => (
     <figure itemscope itemtype="http://schema.org/ImageObject" class="inline-block text-neutral-800 bg-neutral-300 hover:bg-pink-200 text-sm text-center italic rounded shadow-lg shadow-neutral-400 dark:shadow-black my-1 lg:my-2">
-      <a href={image.src} itemprop="contentUrl" data-pswp-width={image.width} data-pswp-height={image.height}>
-        <Image src={image} alt={imagetitles[i]} width={600} height={image.height * 600/image.width} format="webp" class="rounded" />
+      <a
+        href={image.image.src}
+        itemprop="contentUrl"
+        data-pswp-width={image.image.width}
+        data-pswp-height={image.image.height}
+      >
+        <Image src={image.image} alt={image.title} width={600} class="rounded" />
         <span class="pswp-caption-content">
-          {imagetitles[i]}
-          {exifs[i] && <span>{' (' + exifs[i].Make + ' ' + exifs[i].Model  + ')'}</span>}
+          {image.title}
+          {image.exif && <span>{' (' + image.exif.Make + ' ' + image.exif.Model  + ')'}</span>}
         </span>
       </a>
       <figcaption itemprop="caption description" class="rounded">
-        {imagetitles[i]}
+        {image.title}
       </figcaption>
     </figure>            
   ))}
@@ -74,14 +86,14 @@ for (let i in images) {
         gallerySelector: '#' + id,
         childSelector: 'a',
         pswpModule: () => import('photoswipe'),
-        paddingFn: (viewportSize) => {
+        paddingFn: () => {
           return {
             top: 0, bottom: 30, left: 0, right: 0
           }
         }
       })
       
-      const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+      new PhotoSwipeDynamicCaption(lightbox, {
         captionContent: '.pswp-caption-content',
         type: 'below',
       });

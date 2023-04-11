@@ -4,9 +4,10 @@ date: 2018-05-01T12:00:02+00:00
 description: Freycinet Lodge is an accommodation located inside the Freycinet National Park, just past Coles Bay.
 trip: Tasmania 2018
 place: Australia
-location: Freycinet
+location: Freycinet Lodge
 image: ../../assets/gallery/day-1-sunset/title - Chris, sunset.jpeg
 gallery: day-1-sunset
+map: [-42.13486,148.30145,17]
 tags:
   - Freycinet Lodge
   - hotel

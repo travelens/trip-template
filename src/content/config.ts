@@ -14,6 +14,7 @@ const postCollection = defineCollection({
     date: z.date(),
     image: image(),
     gallery: z.string().optional(),
+    map: z.array(z.number()).optional(),
     tags: z.array(z.string()).optional(),
   }),
 })

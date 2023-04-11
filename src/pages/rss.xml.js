@@ -16,11 +16,12 @@ export async function get() {
     <lastBuildDate>${SiteMetadata.buildTime.toISOString()}</lastBuildDate>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>Astro</generator>
-    <managingEditor>${SiteMetadata.author.email}</managingEditor>
-    <webMaster>${SiteMetadata.author.email}</webMaster>
+    <managingEditor>${SiteMetadata.author.email} (${SiteMetadata.author.name})</managingEditor>
+    <webMaster>${SiteMetadata.author.email} (${SiteMetadata.author.name})</webMaster>
 ${trips.map((trip) => `    <item>
       <title>${trip.data.title}</title>
       <link>${import.meta.env.SITE + import.meta.env.BASE_URL + trip.slug}</link>
+      <author>${SiteMetadata.author.email} (${SiteMetadata.author.name})</author>
       <description>${trip.data.description}</description>
       <pubDate>${trip.data.end}</pubDate>
       <guid>${import.meta.env.SITE + import.meta.env.BASE_URL + trip.slug}</guid>
@@ -30,6 +31,7 @@ ${trips.map((trip) => `    <item>
 ${posts.map((post) => `    <item>
       <title>${post.data.title}</title>
       <link>${import.meta.env.SITE + import.meta.env.BASE_URL + post.slug}</link>
+      <author>${SiteMetadata.author.email} (${SiteMetadata.author.name})</author>
       <description>${post.data.description}</description>
       <pubDate>${post.data.date}</pubDate>
       <guid>${import.meta.env.SITE + import.meta.env.BASE_URL + post.slug}</guid>
