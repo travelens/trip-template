@@ -8,6 +8,11 @@ interface Props {
 }
 
 const { post } = Astro.props
+
+const slugify = (url) => url
+  .toLowerCase()
+  .replace(/[^a-z0-9 -]/g, '')
+  .replace(/\s+/g, '-')
 ---
 
 <Layout title={post.data.title}>
@@ -39,7 +44,7 @@ const { post } = Astro.props
       </h2>
     </a>
     <div class="flex items-center my-2 text-neutral-600">
-      <a href={'/place/' + post.data.place} class="hover:text-pink">
+      <a href={'/place/' + slugify(post.data.place)} class="hover:text-pink">
         <span class="w-4 h-4 i-fa6-solid-globe"></span>
         <span class="ml-1">{post.data.place}</span>
       </a>

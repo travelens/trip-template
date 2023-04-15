@@ -8,6 +8,11 @@ interface Props {
 }
 
 const { trip } = Astro.props
+
+const slugify = (url) => url
+  .toLowerCase()
+  .replace(/[^a-z0-9 -]/g, '')
+  .replace(/\s+/g, '-')
 ---
 
 <Layout title={trip.data.title}>
@@ -34,7 +39,7 @@ const { trip } = Astro.props
     class="max-w-4xl mx-auto bg-white pt-12 px-12 lg:px-24 -mt-32 relative z-10"
   >
     <h2 class="flex items-center uppercase tracking-widest text-xs text-neutral-600">
-      <a href={'/place/' + trip.data.place} class="hover:text-pink">
+      <a href={'/place/' + slugify(trip.data.place)} class="hover:text-pink">
         <span class="w-4 h-4 i-fa6-solid-globe"></span>
         <span class="ml-1">{trip.data.place}</span>
       </a>
