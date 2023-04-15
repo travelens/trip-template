@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content'
-import { SiteMetadata } from '../config'
+import { SiteMetadata } from 'astro-travelens/config'
 
 const trips = await getCollection('trip', (trip) => { return !trip.data.draft})
 const posts = await getCollection('post', (post) => { return !post.data.draft})
