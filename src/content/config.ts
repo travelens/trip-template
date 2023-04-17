@@ -8,6 +8,7 @@ const postCollection = defineCollection({
     draft: z.boolean().optional(),
     trip: z.string(),
     place: z.string(),
+    timezone: z.string().default('Australia/Sydney'),
     location: z.string(),
     title: z.string(),
     description: z.string(),
@@ -23,6 +24,7 @@ const tripCollection = defineCollection({
   schema: ({ image }) => z.object({
     draft: z.boolean().optional(),
     place: z.string(),
+    timezone: z.string().default('Australia/Sydney'),
     location: z.string(),
     title: z.string(),
     description: z.string(),

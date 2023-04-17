@@ -4,6 +4,7 @@ date: 2018-05-01T07:00:57+00:00
 description: Devil’s Corner is a cellar door named after a rugged bend in a river, offering great views of the Moulting Lagoon wetlands, The Hazards and Freycinet Peninsula.
 trip: Tasmania 2018
 place: Australia
+timezone: Australia/Tasmania
 location: Devil's Corner
 image: ../../assets/gallery/day-1-devils-corner/Chris, Devil's Corner.jpeg
 gallery: day-1-devils-corner

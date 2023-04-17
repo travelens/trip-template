@@ -1,6 +1,7 @@
 ---
 title: My Trip
 place: Australia
+timezone: Australia/Tasmania
 location: Tasmania
 start: 2018-05-01T00:00:00+11:00
 end: 2018-05-05T00:00:00+11:00

@@ -41,7 +41,7 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
                         new Date(post.data.date).toLocaleString('en-AU', {
                           dateStyle: 'long',
                           timeStyle: 'short',
-                          timeZone: 'Australia/Sydney',
+                          timeZone: post.data.timezone,
                         })
                       }
                     </span>

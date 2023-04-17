@@ -9,7 +9,7 @@ interface Props {
 
 const { trip } = Astro.props
 
-const slugify = (url) => url
+const slugify = (url : string) => url
   .toLowerCase()
   .replace(/[^a-z0-9 -]/g, '')
   .replace(/\s+/g, '-')
@@ -57,7 +57,7 @@ const slugify = (url) => url
         {
           new Date(trip.data.start).toLocaleString('en-AU', {
             dateStyle: 'long',
-            timeZone: 'Australia/Sydney',
+            timeZone: trip.data.timezone,
           })
         }
       </span>
@@ -66,7 +66,7 @@ const slugify = (url) => url
         {
           new Date(trip.data.end).toLocaleString('en-AU', {
             dateStyle: 'long',
-            timeZone: 'Australia/Sydney',
+            timeZone: trip.data.timezone,
           })
         }
       </span>
