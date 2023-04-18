@@ -23,4 +23,10 @@ export default defineConfig({
       },
     }),
   ],
+  safelist: [
+    'i-fa6-brands-linkedin',
+    'i-fa6-brands-facebook',
+    'i-fa6-brands-instagram',
+    'i-fa6-brands-github',
+  ],
 })
