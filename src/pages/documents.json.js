@@ -39,8 +39,8 @@ documents = documents.concat(posts.map(doc => ({
 })))
 
 export async function get() {
-    const body = JSON.stringify(documents)
-    return {
-      body
-    }
+  const body = JSON.stringify(documents)
+  return {
+    body
   }
+}
