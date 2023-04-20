@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
-import { Mappath } from 'astro-travelens'
+// @ts-ignore 
+import Mappath from 'astro-travelens/mappath'
 
 const posts = await getCollection('post', ({ data }) => {
   return data.draft !== true;
