@@ -9,7 +9,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "copydocs": "cp dist/documents.json ../travelens.github.io/src/data/${npm_package_name}.json"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.2.1",
