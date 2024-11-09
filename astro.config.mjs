@@ -8,9 +8,6 @@ import { SiteMetadata } from 'astro-travelens/config'
 export default defineConfig({
   site: SiteMetadata.site,
   base: 'trip',
-  experimental: {
-    assets: true
-  },
   integrations: [markdoc(), alpine(), UnoCSS({
     injectReset: true
   })]
