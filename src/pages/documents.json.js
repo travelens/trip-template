@@ -6,7 +6,7 @@ const docs = await getCollection('trip', (trip) => {
 let documents = docs.map((doc) => ({
   id: doc.id,
   slug: 'index.html',
-  base: import.meta.env.BASE_URL,
+  base: `${import.meta.env.BASE_URL}`,
   collection: doc.collection,
   body: doc.body,
   trip: doc.data.title,
@@ -28,7 +28,7 @@ documents = documents.concat(
   posts.map((doc) => ({
     id: doc.id,
     slug: doc.slug,
-    base: import.meta.env.BASE_URL,
+    base: `${import.meta.env.BASE_URL}`,
     collection: doc.collection,
     body: doc.body,
     trip: doc.data.trip,
