@@ -6,7 +6,7 @@ trip: Tasmania 2018
 place: Australia
 timezone: Australia/Tasmania
 location: Devil's Corner
-image: ../../assets/gallery/day-1-devils-corner/Chris, Devil's Corner.jpeg
+image: ../gallery/day-1-devils-corner/Chris,_Devils_Corner.jpeg
 gallery: day-1-devils-corner
 map: [-41.97224, 148.15147, 17]
 tags:

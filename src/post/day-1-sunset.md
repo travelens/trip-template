@@ -6,7 +6,7 @@ trip: Tasmania 2018
 place: Australia
 timezone: Australia/Tasmania
 location: Freycinet Lodge
-image: ../../assets/gallery/day-1-sunset/title - Chris, sunset.jpeg
+image: ../gallery/day-1-sunset/title-Chris,_sunset.jpeg
 gallery: day-1-sunset
 map: [-42.13486, 148.30145, 17]
 tags:

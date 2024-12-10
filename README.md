@@ -27,16 +27,21 @@ Inside this project, you'll see the following folders and files:
 ├── public/
 │   └── favicon.svg
 ├── src/
-│   ├── assets/
-│   │   └── image.jpg
+│   ├── comntent.config.ts
 │   ├── components/
 │   │   └── Card.astro
-│   ├── content/
-│   │   └── article.md
+│   ├── gallery/
+│   │   └── gallery1/
+|   │       └── image.jpeg
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   |   └── index.astro
+│   ├── post/
+│   │   └── article.md
+│   └── trip/
+│       └── my-trip.md
+│       └── trip.jpeg
 └── package.json
 ```
 
