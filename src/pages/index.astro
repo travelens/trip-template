@@ -1,8 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content'
 import { Image } from 'astro:assets'
-import Trip from '../layouts/Trip.astro'
-import Tripmap from '../components/Tripmap.astro'
+import Trip from '../common/Trip.astro'
+import Tripmap from '../common/Tripmap.astro'
 
 const trips = await getCollection('trip', ({ data }) => {
   return data.draft !== true
