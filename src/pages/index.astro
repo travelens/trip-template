@@ -24,7 +24,7 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
   </div>
   {
     sortedPosts.map((post, i) => (
-      <div class="mx-auto mb-4 px-6 py-4 rounded-lg bg-rose-50 container grid grid-cols-1 shadow-lg shadow-neutral-400 lg:grid-cols-2">
+        <div class="mx-auto mb-4 px-6 py-4 rounded-lg bg-rose-50 container grid grid-cols-1 shadow-md shadow-neutral-300 lg:grid-cols-2">
         <div class="h-52 relative lg:h-auto md:h-72">
           <a href={`${import.meta.env.BASE_URL}` + post.id}>
             <Image
@@ -41,7 +41,7 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
         >
           <div>
             <a href={`${import.meta.env.BASE_URL}` + post.id}>
-              <h3 class="font-display text-4xl text-black leading-tight mb-6 hover:text-pink">
+              <h3 class="font-display text-4xl text-black leading-tight mb-6 hover:text-pink-700">
                 {post.data.title}
               </h3>
             </a>
@@ -60,7 +60,7 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
             <p>{post.data.description}</p>
             <a
               href={`${import.meta.env.BASE_URL}` + post.id}
-              class="font-heading text-sm text-white tracking-widest mt-4 px-8 py-4 bg-pink-400 inline-block hover:bg-pink-500"
+              class="font-heading text-sm text-white tracking-widest mt-4 px-8 py-4 bg-pink-700 rounded-md inline-block hover:bg-pink-800"
             >
               Read
             </a>

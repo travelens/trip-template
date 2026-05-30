@@ -9,8 +9,6 @@ export default defineConfig({
   base: process.env.npm_package_name + '/',
   integrations: [
     markdoc(),
-    UnoCSS({
-      injectReset: true
-    })
+    UnoCSS()
   ]
 })

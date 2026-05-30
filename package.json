@@ -26,7 +26,6 @@
     "@iconify-json/flag": "^1.2.12",
     "@iconify-json/logos": "^1.2.11",
     "@unocss/astro": "^66.7.0",
-    "@unocss/reset": "^66.7.0",
     "astro": "^6.4.2",
     "astro-seo": "^1.1.0",
     "exifr": "^7.1.3",
