@@ -1,4 +1,4 @@
-import UnoCSS from 'unocss/astro'
+import UnoCSS from '@unocss/astro'
 import markdoc from '@astrojs/markdoc'
 import alpine from '@astrojs/alpinejs'
 import { defineConfig } from 'astro/config'

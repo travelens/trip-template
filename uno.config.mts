@@ -2,31 +2,27 @@ import {
   defineConfig,
   presetTypography,
   presetIcons,
-  presetUno,
-  transformerDirectives,
+  presetWind4,
+  transformerDirectives
 } from 'unocss'
 
 export default defineConfig({
-  shortcuts: [
-    { 'i-logo': 'i-logos-astro w-6em h-6em transform transition-800' },
-  ],
-  transformers: [
-    transformerDirectives(),
-  ],
+  shortcuts: [{ 'i-logo': 'i-logos-astro w-6em h-6em transform transition-800' }],
+  transformers: [transformerDirectives()],
   presets: [
-    presetUno(),
+    presetWind4(),
     presetTypography(),
     presetIcons({
       extraProperties: {
-        'display': 'inline-block',
-        'vertical-align': 'middle',
-      },
-    }),
+        display: 'inline-block',
+        'vertical-align': 'middle'
+      }
+    })
   ],
   safelist: [
     'i-fa6-brands-linkedin',
     'i-fa6-brands-facebook',
     'i-fa6-brands-instagram',
-    'i-fa6-brands-github',
-  ],
+    'i-fa6-brands-github'
+  ]
 })
