@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cp -a ../trip-template/{.github,.vscode,.gitignore,.prettierignore,*config*,LICENSE,update.sh} .
-cp -a ../trip-template/src/{components,layouts,pages,content.config.ts} src
+cp -a ../trip-template/src/{pages,content.config.ts} src
 rm prettier.config.cjs
 node -e "
   const fs = require('fs');

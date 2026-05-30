@@ -1,24 +1,23 @@
 import { getCollection } from 'astro:content'
+import { cleanContent } from '../common/search.ts'
 
 const docs = await getCollection('trip', (trip) => {
   return !trip.data.draft
 })
 let documents = docs.map((doc) => ({
   id: doc.id,
-  slug: 'index.html',
-  base: `${import.meta.env.BASE_URL}`,
+  url: `${import.meta.env.BASE_URL}`,
   collection: doc.collection,
-  body: doc.body,
   trip: doc.data.title,
   place: doc.data.place,
-  timezone: doc.data.timezone,
   location: doc.data.location,
   title: doc.data.title,
-  description: doc.data.description,
-  date: doc.data.end,
+  description: doc.data.description ?? '',
+  date: doc.data.end ?? '',
   image: doc.data.image,
   map: doc.data.map,
-  tags: doc.data.tags
+  tags: doc.data.tags?.join(' ') ?? '',
+  content: cleanContent(doc.body)
 }))
 
 const posts = await getCollection('post', (post) => {
@@ -27,20 +26,18 @@ const posts = await getCollection('post', (post) => {
 documents = documents.concat(
   posts.map((doc) => ({
     id: doc.id,
-    slug: doc.id,
-    base: `${import.meta.env.BASE_URL}`,
+    url: `${import.meta.env.BASE_URL}${doc.id}`,
     collection: doc.collection,
-    body: doc.body,
     trip: doc.data.trip,
     place: doc.data.place,
-    timezone: doc.data.timezone,
     location: doc.data.location,
     title: doc.data.title,
-    description: doc.data.description,
-    date: doc.data.date,
+    description: doc.data.description ?? '',
+    date: doc.data.date ?? '',
     image: doc.data.image,
     map: doc.data.map,
-    tags: doc.data.tags
+    tags: doc.data.tags?.join(' ') ?? '',
+    content: cleanContent(doc.body)
   }))
 )
 
