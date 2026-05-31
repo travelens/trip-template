@@ -11,6 +11,11 @@ import {
 export default defineConfig({
   shortcuts: [{ 'i-logo': 'i-logos-astro w-6em h-6em transition-800' }],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+  preflights: [
+    {
+      getCSS: () => `button { font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif); }`
+    }
+  ],
   presets: [
     presetWind4({
       preflights: {
