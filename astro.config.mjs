@@ -1,5 +1,4 @@
 import UnoCSS from '@unocss/astro'
-import markdoc from '@astrojs/markdoc'
 import { defineConfig } from 'astro/config'
 import { SiteMetadata } from './src/common/config.ts'
 
@@ -7,5 +6,5 @@ import { SiteMetadata } from './src/common/config.ts'
 export default defineConfig({
   site: SiteMetadata.site,
   base: process.env.npm_package_name + '/',
-  integrations: [markdoc(), UnoCSS()]
+  integrations: [UnoCSS()]
 })
