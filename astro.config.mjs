@@ -7,8 +7,5 @@ import { SiteMetadata } from './src/common/config.ts'
 export default defineConfig({
   site: SiteMetadata.site,
   base: process.env.npm_package_name + '/',
-  integrations: [
-    markdoc(),
-    UnoCSS()
-  ]
+  integrations: [markdoc(), UnoCSS()]
 })

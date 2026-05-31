@@ -24,7 +24,7 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
   </div>
   {
     sortedPosts.map((post, i) => (
-        <div class="mx-auto mb-4 px-6 py-4 rounded-lg bg-rose-50 container grid grid-cols-1 shadow-md shadow-neutral-300 lg:grid-cols-2">
+      <div class="mx-auto mb-4 px-6 py-4 rounded-lg bg-rose-50 container grid grid-cols-1 shadow-md shadow-neutral-300 lg:grid-cols-2">
         <div class="h-52 relative lg:h-auto md:h-72">
           <a href={`${import.meta.env.BASE_URL}` + post.id}>
             <Image
@@ -41,14 +41,14 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
         >
           <div>
             <a href={`${import.meta.env.BASE_URL}` + post.id}>
-              <h3 class="font-display text-4xl text-black leading-tight mb-6 hover:text-pink-700">
+              <h3 class="text-4xl text-black leading-tight font-display mb-6 hover:text-pink-700">
                 {post.data.title}
               </h3>
             </a>
             <div class="text-neutral-600 my-2 flex items-center">
-              <span class="i-fa6-solid-location-arrow h-4 w-4" />
+              <span class="i-fa6-solid-location-arrow h-4 w-4" aria-hidden="true" />
               <span class="ml-1 mr-4">{post.data.location}</span>
-              <span class="i-fa6-solid-calendar-days h-4 w-4" />
+              <span class="i-fa6-solid-calendar-days h-4 w-4" aria-hidden="true" />
               <span class="ml-1">
                 {new Date(post.data.date).toLocaleString('en-AU', {
                   dateStyle: 'long',
@@ -60,7 +60,8 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
             <p>{post.data.description}</p>
             <a
               href={`${import.meta.env.BASE_URL}` + post.id}
-              class="font-heading text-sm text-white tracking-widest mt-4 px-8 py-4 bg-pink-700 rounded-md inline-block hover:bg-pink-800"
+              class="text-sm text-white tracking-widest font-heading mt-4 px-8 py-4 rounded-md bg-pink-700 inline-block focus-visible:outline-2 focus-visible:outline-rosely-orchid focus-visible:outline-offset-2 hover:bg-pink-800"
+              aria-label={`Read: ${post.data.title}`}
             >
               Read
             </a>
