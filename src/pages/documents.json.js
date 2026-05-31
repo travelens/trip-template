@@ -16,7 +16,7 @@ let documents = docs.map((doc) => ({
   date: doc.data.end ?? '',
   image: doc.data.image,
   map: doc.data.map,
-  tags: doc.data.tags?.join(' ') ?? '',
+  tags: doc.data.tags?.join(':') ?? '',
   content: cleanContent(doc.body)
 }))
 
@@ -36,7 +36,7 @@ documents = documents.concat(
     date: doc.data.date ?? '',
     image: doc.data.image,
     map: doc.data.map,
-    tags: doc.data.tags?.join(' ') ?? '',
+    tags: doc.data.tags?.join(':') ?? '',
     content: cleanContent(doc.body)
   }))
 )
