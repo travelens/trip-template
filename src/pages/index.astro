@@ -60,7 +60,7 @@ const sortedPosts = posts.sort((a, b) => +a.data.date - +b.data.date)
             <p>{post.data.description}</p>
             <a
               href={`${import.meta.env.BASE_URL}` + post.id}
-              class="text-sm text-rosely-sugar tracking-widest font-heading mt-4 px-8 py-4 rounded-md bg-rosely-orchid inline-block focus-visible:outline-2 focus-visible:outline-rosely-orchid focus-visible:outline-offset-2 hover:bg-rosely-grapeade"
+              class="text-sm text-rosely-sugar tracking-widest font-sans mt-4 px-8 py-4 rounded-md bg-rosely-orchid inline-block focus-visible:outline-2 focus-visible:outline-rosely-orchid focus-visible:outline-offset-2 hover:bg-rosely-grapeade"
               aria-label={`Read: ${post.data.title}`}
             >
               Read
